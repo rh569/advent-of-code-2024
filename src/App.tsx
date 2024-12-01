@@ -1,4 +1,6 @@
 import './App.css'
+import { DayInput } from './components/DayInput'
+import { DAYS } from './days'
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
           Advent of Code (2024)
         </a>
       </h1>
+
+      <DayInput days={DAYS} />
     </>
   )
 }
