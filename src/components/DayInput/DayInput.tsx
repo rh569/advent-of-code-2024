@@ -3,6 +3,7 @@ import { DayDefinition } from "../../days"
 import { MessageType } from "../../libs/constants"
 
 import './styles.css'
+import { useSelectedDay } from "./useSelectedDay"
 
 
 type DayInputProps = {
@@ -18,7 +19,7 @@ enum State {
 
 export function DayInput({ days }: DayInputProps) {
     const [state, setState] = useState(State.INITIAL)
-    const [selectedDay, setSelectedDay] = useState<number>(1)
+    const [selectedDay, setSelectedDay] = useSelectedDay()
     const [answer, setAnswer] = useState<string | null>(null)
     const [inputData, setInputData] = useState<string>('')
     const workerRef = useRef<Worker | null>(null)
@@ -60,7 +61,7 @@ export function DayInput({ days }: DayInputProps) {
 
     return (
         <form className="container" onSubmit={(e) => e.preventDefault()}>
-            <select onChange={(e) => { setSelectedDay(Number(e.target.value)) }}>
+            <select value={selectedDay} onChange={(e) => { setSelectedDay(Number(e.target.value)) }}>
                 {days.map((day) =>
                     <option key={day.modulePath} value={day.num}>{day.num} - {day.title}</option>
                 )}
