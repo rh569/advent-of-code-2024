@@ -13,6 +13,6 @@ export const DAYS: DayDefinition[] = [
     {
         num: 2,
         modulePath: import.meta.resolve(`./day2`),
-        title: 'TBC'
+        title: 'Red-Nosed Reports'
     },
 ]
