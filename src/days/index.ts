@@ -15,4 +15,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day2`),
         title: 'Red-Nosed Reports'
     },
+    {
+        num: 3,
+        modulePath: import.meta.resolve(`./day3`),
+        title: 'Mull It Over'
+    },
 ]
