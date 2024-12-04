@@ -23,3 +23,7 @@ I'm surprised I jumped so many places between part 1 and 2 by just nesting a loo
 Nice little regex puzzle. Got really good re-use from part 1 in part 2, with the trick being to do two rounds of `split` with the start and stop commands, discarding all string parts after any stop command.
 
 Didn't get time to start until late evening, so very poor placement today (>80k for part 2).
+
+#### 4 - Ceres Search
+
+Think this went quite well and I enjoyed the twist for part 2. Solution could probably be a bit faster by manually setting the search bounds at the edge of the grid instead of just catching the `TypeError` on out of range rows.
