@@ -25,4 +25,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day4`),
         title: 'Ceres Search'
     },
+    {
+        num: 5,
+        modulePath: import.meta.resolve(`./day5`),
+        title: 'Print Queue'
+    },
 ]
