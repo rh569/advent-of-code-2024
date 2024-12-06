@@ -30,4 +30,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day5`),
         title: 'Print Queue'
     },
+    {
+        num: 6,
+        modulePath: import.meta.resolve(`./day6`),
+        title: 'Guard Gallivant'
+    },
 ]
