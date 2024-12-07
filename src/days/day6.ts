@@ -22,13 +22,9 @@ function part2(input: string) {
 
     for (const vPosStr of visited) {
         // loop over all visited points bar the start and alter the grid to include obs there
-        const newObstaclePos = vPosStr.split(',').map(Number) as Pos
-        const gridCopy = copyGrid(grid)
+        const extraObstacle = vPosStr.split(',').map(Number) as Pos
 
-        //set new obstacle
-        gridCopy[newObstaclePos[0]][newObstaclePos[1]] = '#'
-
-        if (pathHasLoop(guardPos, gridCopy)) loopVariantCount++
+        if (pathHasLoop(guardPos, grid, extraObstacle)) loopVariantCount++
     }
 
     return loopVariantCount
@@ -178,7 +174,7 @@ function visitPointsToObstacle(visited: Set<string>, pos: Pos, dir: string, obst
     }
 }
 
-function pathHasLoop(start: Pos, grid: string[][]): boolean {
+function pathHasLoop(start: Pos, grid: string[][], extraObstacle: Pos): boolean {
     const directionsByVisitedPositions = new Map<string, string[]>()
 
     let currentDirection = 'up'
@@ -195,7 +191,10 @@ function pathHasLoop(start: Pos, grid: string[][]): boolean {
         if (!isInBounds(facingPos, grid.length)) return false
 
         // turn / move
-        if (grid[facingPos[0]][facingPos[1]] === '#') {
+        if (
+            grid[facingPos[0]][facingPos[1]] === '#' ||
+            (facingPos[0] === extraObstacle[0] && facingPos[1] === extraObstacle[1])
+        ) {
             currentDirection = getNextDir(currentDirection)
         } else {
             directionsByVisitedPositions.set(`${currentPosition}`,
@@ -240,16 +239,6 @@ function logGrid(grid: string[][], visited: Set<string>) {
         }
         console.log(line)
     }
-}
-
-function copyGrid(grid: string[][]): string[][] {
-    const copy: string[][] = []
-
-    for (const row of grid) {
-        copy.push([...row])
-    }
-
-    return copy
 }
 
 onmessage = makeMessageHandler(part1, part2)
