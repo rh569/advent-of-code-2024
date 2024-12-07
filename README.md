@@ -33,3 +33,9 @@ Think this went quite well and I enjoyed the twist for part 2. Solution could pr
 Think I may have over-complicated part 1 here. Ended up making a map of all the rules such that any page could be compared to any other to check if a rule was being broken. Part 2 was nice once I'd checked the Array docs for how to write a sort comparator.
 
 The confusion of having things being before or after other things whilst doing nested looping in different directions hurt my brain. I miss the regex puzzle...
+
+#### 6 - Guard Gallivant
+
+This took me far too long trying to implement an aproach that 'jumped' from obstacle to obstacle in part 1 and then having to write the straightforward stepping logic for part 2 regardless.
+
+Part 2 runs very slowly (~15 seconds), which could be hugely improved by storing the grid state from just before each loop is detected so as not to re-walk the path 5000+ times.
