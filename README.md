@@ -39,3 +39,7 @@ The confusion of having things being before or after other things whilst doing n
 This took me far too long trying to implement an aproach that 'jumped' from obstacle to obstacle in part 1 and then having to write the straightforward stepping logic for part 2 regardless.
 
 Part 2 runs very slowly (~15 seconds), which could be hugely improved by storing the grid state from just before each loop is detected so as not to re-walk the path 5000+ times.
+
+#### 7 - Bridge Repair
+
+While trying to come up with a nice way of gererating the permutations with just loops, I realised that I could just use the binary representation of the count of the permutations. This ended up translating very nicely to part two, just by changing the base to ternary and adding in the new operator. Much nicer after Day 6.
