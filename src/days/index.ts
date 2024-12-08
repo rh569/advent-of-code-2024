@@ -40,4 +40,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day7`),
         title: 'Bridge Repair'
     },
+    {
+        num: 8,
+        modulePath: import.meta.resolve(`./day8`),
+        title: 'Resonant Collinearity'
+    },
 ]
