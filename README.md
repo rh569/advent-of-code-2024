@@ -43,3 +43,9 @@ Part 2 runs very slowly (~15 seconds), which could be hugely improved by storing
 #### 7 - Bridge Repair
 
 While trying to come up with a nice way of gererating the permutations with just loops, I realised that I could just use the binary representation of the count of the permutations. This ended up translating very nicely to part two, just by changing the base to ternary and adding in the new operator. Much nicer after Day 6.
+
+#### 8 - Resonant Collinearity
+
+Really liked today after being initially daunted at the prospect of maybe having to calculate arbitrary line/grid intersections.
+
+For part 2, I only really needed to change where I was checking for the antinodes being in range of the map, and to switch which tower I stated applying the antinode calculations from to account for the towers being nodes. (Now writing this, I realise every tower is necessarily an antinode, so could have just included those...)

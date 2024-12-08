@@ -24,7 +24,21 @@ function part1(input: string) {
 }
 
 function part2(input: string) {
-    return input.length
+    const map = input.split('\n')
+        .map(l => l.split(''))
+
+    const positionsByFreq = getPositionsByFreq(map)
+    const antinodesByFreq = getHarmonicAntinodesByFreq(positionsByFreq, map)
+
+    const uniqueAntinodes = new Set<string>()
+
+    for (const [, antinodes] of antinodesByFreq) {
+        for (const antinode of antinodes) {
+            uniqueAntinodes.add(`${antinode}`)
+        }
+    }
+
+    return uniqueAntinodes.size
 }
 
 function getPositionsByFreq(map: string[][]): Map<string, Pos[]> {
@@ -60,6 +74,46 @@ function getAntinodesByFreq(positionsByFreq: Map<string, Pos[]>): Map<string, Po
                     [au + distance[0], av + distance[1]],
                     [bu - distance[0], bv - distance[1]]
                 ]
+
+                if (!antinodesByFreq.has(f)) {
+                    antinodesByFreq.set(f, antinodes)
+                } else {
+                    antinodesByFreq.set(f,
+                        [
+                            ...(antinodesByFreq.get(f) ?? []),
+                            ...antinodes
+                        ]
+                    )
+                }
+            }
+        }
+    }
+
+    return antinodesByFreq
+}
+
+function getHarmonicAntinodesByFreq(positionsByFreq: Map<string, Pos[]>, map: string[][]): Map<string, Pos[]> {
+    const antinodesByFreq = new Map<string, Pos[]>()
+
+    for (const [f, positions] of positionsByFreq) {
+        for (let i = 0; i < positions.length - 1; i++) {
+            for (let j = i + 1; j < positions.length; j++) {
+                const [au, av] = positions[i]
+                const [bu, bv] = positions[j]
+                const distance: Vec = [au - bu, av - bv]
+                const antinodes: Pos[] = []
+
+                let antinode = positions[j]
+                // eslint-disable-next-line no-constant-binary-expression
+                while ((antinode = [antinode[0] + distance[0], antinode[1] + distance[1]]) && isInRange(antinode, map)) {
+                    antinodes.push(antinode)
+                }
+
+                antinode = positions[i]
+                // eslint-disable-next-line no-constant-binary-expression
+                while ((antinode = [antinode[0] - distance[0], antinode[1] - distance[1]]) && isInRange(antinode, map)) {
+                    antinodes.push(antinode)
+                }
 
                 if (!antinodesByFreq.has(f)) {
                     antinodesByFreq.set(f, antinodes)
