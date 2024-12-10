@@ -45,4 +45,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day8`),
         title: 'Resonant Collinearity'
     },
+    {
+        num: 9,
+        modulePath: import.meta.resolve(`./day9`),
+        title: 'Disk Fragmenter'
+    },
 ]

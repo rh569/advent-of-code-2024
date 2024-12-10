@@ -49,3 +49,9 @@ While trying to come up with a nice way of gererating the permutations with just
 Really liked today after being initially daunted at the prospect of maybe having to calculate arbitrary line/grid intersections.
 
 For part 2, I only really needed to change where I was checking for the antinodes being in range of the map, and to switch which tower I stated applying the antinode calculations from to account for the towers being nodes. (Now writing this, I realise every tower is necessarily an antinode, so could have just included those...)
+
+#### 9 - Disk Fragmenter
+
+Did part 1 well enough, although not cleanly - had to use a derement within a for loop as some kind of retry mechanism and if that doesn't smell, I don't know what does.
+
+Came back to part 2 on the 10th as I'd misread the procedure. Turned out keeping the data as maps by index was actually useful although it still takes a few seconds to run.
