@@ -50,4 +50,9 @@ export const DAYS: DayDefinition[] = [
         modulePath: import.meta.resolve(`./day9`),
         title: 'Disk Fragmenter'
     },
+    {
+        num: 10,
+        modulePath: import.meta.resolve(`./day10`),
+        title: 'Hoof It'
+    },
 ]
