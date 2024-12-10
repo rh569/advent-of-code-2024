@@ -55,3 +55,10 @@ For part 2, I only really needed to change where I was checking for the antinode
 Did part 1 well enough, although not cleanly - had to use a derement within a for loop as some kind of retry mechanism and if that doesn't smell, I don't know what does.
 
 Came back to part 2 on the 10th as I'd misread the procedure. Turned out keeping the data as maps by index was actually useful although it still takes a few seconds to run.
+
+#### 10 - Hoof It
+
+Thought this was a nice entry to path finding and my part 1 worked on first run which I was happy with.
+In part 2, I missed a condition to prevent jumping straight from heights lower than 8 to 9, but pretty good otherwise.
+
+I'm sure Eric dubbed the 0s as 'trailheads' specifically to sew confusion with 'trail heads' - also I hope the Reindeer comes with us.
