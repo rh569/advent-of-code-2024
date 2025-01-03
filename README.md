@@ -61,10 +61,16 @@ Came back to part 2 on the 10th as I'd misread the procedure. Turned out keeping
 Thought this was a nice entry to path finding and my part 1 worked on first run which I was happy with.
 In part 2, I missed a condition to prevent jumping straight from heights lower than 8 to 9, but pretty good otherwise.
 
-I'm sure Eric dubbed the 0s as 'trailheads' specifically to sew confusion with 'trail heads' - also I hope the Reindeer comes with us.
+I'm sure Eric dubbed the 0s as 'trailheads' specifically to sow confusion with 'trail heads' - also I hope the Reindeer comes with us.
 
 #### 11 - Plutonium Pebbles
 
 Naive linked list approach worked for part 1, but unsurprisingly not for part 2.
 
 Did a rewrite for part 2 on a very late train home from a work social, eventually getting the map change from one interation to the next correct after a lot of trial and error.
+
+#### 12 - Garden Groups
+
+The rest of December was swamped after the 11th - just starting to look back at the later half.
+
+Finished part 1 for the garden perimeters on the Christmas Eve, then really struggled with part 2. Rewrite various bits of crap edge logic several times. Eventually took to organising all unit edges into rows and columns, then sorting on the opposing direction and counting concurrent sections. For fun, also tried out some basic bitmasking to represent edges in about the third rewrite. Happy to be moving on now...
